@@ -1,0 +1,21 @@
+import subprocess
+import time
+
+def term("v1.0"):
+	terma = input("Terminal: ")
+	subprocess.run(f"{terma}", shell=True
+def term("v2.0"):
+	terma = input("Terminal: ")
+	print("reading code...")
+	time.sleep(6)
+	print("Done!")
+	subprocess.run(f"{terma}", shell=True
+def term("v1.0P"):
+	pas = input("Password (P)")
+	if pas = "thepro":
+		terma = input("Terminal: ")
+        	print("reading code...")
+        
+time.sleep(6)
+        	print("Done!")
+        subprocess.run(f"{terma}", shell=Tru

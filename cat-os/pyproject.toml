@@ -1,0 +1,63 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cat-os"
+dynamic = ["version"]
+description = ''
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "Leo", email = "Leo@pop.rasberrypi" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = []
+
+[project.urls]
+Documentation = "https://github.com/Leo/cat-os#readme"
+Issues = "https://github.com/Leo/cat-os/issues"
+Source = "https://github.com/Leo/cat-os"
+
+[tool.hatch.version]
+path = "src/cat_os/__about__.py"
+
+[tool.hatch.envs.types]
+extra-dependencies = [
+  "mypy>=1.0.0",
+]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/cat_os tests}"
+
+[tool.coverage.run]
+source_pkgs = ["cat_os", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/cat_os/__about__.py",
+]
+
+[tool.coverage.paths]
+cat_os = ["src/cat_os", "*/cat-os/src/cat_os"]
+tests = ["tests", "*/cat-os/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
+[project.scripts]
+cat-os = "cat_os.__main__:main"
