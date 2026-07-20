@@ -137,10 +137,13 @@ while True:
                     python(python_v="yes")
                     time.sleep(4)
                     break
-                elif c8 == "1":
+                elif c8 == "2":
                     break
         elif c == "7":
-            made()
+            while True:
+                made()
+                time.sleep(3)
+                break
         elif c == "8":
             exit()
     else:
